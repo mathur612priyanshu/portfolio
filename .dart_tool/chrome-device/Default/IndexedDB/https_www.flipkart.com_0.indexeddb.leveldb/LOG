@@ -1,0 +1,6 @@
+2025/02/01-12:06:21.249 26d0 Creating DB C:\Users\star6\AppData\Local\Temp\flutter_tools.491c42fb\flutter_tools_chrome_device.868594ef\Default\IndexedDB\https_www.flipkart.com_0.indexeddb.leveldb since it was missing.
+2025/02/01-12:06:21.256 26d0 Reusing MANIFEST C:\Users\star6\AppData\Local\Temp\flutter_tools.491c42fb\flutter_tools_chrome_device.868594ef\Default\IndexedDB\https_www.flipkart.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/02/01-12:10:36.216 26d0 Level-0 table #5: started
+2025/02/01-12:10:36.219 26d0 Level-0 table #5: 4875 bytes OK
+2025/02/01-12:10:36.221 26d0 Delete type=0 #3
+2025/02/01-12:10:36.221 26d0 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
