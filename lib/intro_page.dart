@@ -11,7 +11,10 @@ class IntroPage extends StatelessWidget {
             MediaQuery.of(context).size.height
         ? true
         : false;
+    var size = MediaQuery.of(context).size;
     return Container(
+      height: vertical ? (size.height / 2) - 10 : size.height - 10,
+      width: vertical ? size.width - 10 : (size.width / 2) - 10,
       margin: EdgeInsets.all(10),
       child: Center(
         child: Column(
@@ -40,10 +43,10 @@ class IntroPage extends StatelessWidget {
               child: InkWell(
                 onTap: () async {
                   final uri = Uri.parse(
-                      "https://drive.google.com/file/d/1tHNx0cioW2YzW4HwM8yXej5LnFADcbk1/view?usp=sharing");
+                      "https://drive.google.com/file/d/1HvNltEPrG7WeBLbM_wGqpwdrrMbxk-OG/view?usp=sharing");
                   if (await launchUrl(uri,
                       mode: LaunchMode.externalApplication)) {
-                    throw 'Could not launch "https://drive.google.com/file/d/1tHNx0cioW2YzW4HwM8yXej5LnFADcbk1/view?usp=sharing"';
+                    throw 'Could not launch "https://drive.google.com/file/d/1HvNltEPrG7WeBLbM_wGqpwdrrMbxk-OG/view?usp=sharing"';
                   }
                 },
                 child: Container(

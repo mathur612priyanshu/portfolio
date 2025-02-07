@@ -23,10 +23,6 @@ class _BirbAnimationState extends State<BirbAnimation> {
       rootBundle.load("assets/rive/birb.riv").then((data) async {
         try {
           final file = RiveFile.import(data);
-          if (file.mainArtboard == null) {
-            print('Artboard is null');
-            return;
-          }
           final artboard = file.mainArtboard;
 
           try {
@@ -66,7 +62,11 @@ class _BirbAnimationState extends State<BirbAnimation> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    bool isMobile = size.width * 1.2 < size.height ? true : false;
     return Container(
+      height: isMobile ? (size.height / 2) - 10 : size.height - 10,
+      width: isMobile ? size.width - 10 : (size.width / 2) - 10,
       child: riveArtboard == null
           ? const Center(child: Text('Failed to load Rive animation'))
           : Column(

@@ -7,11 +7,10 @@ class HoverButton extends StatefulWidget {
   final bool isDark;
 
   const HoverButton(
-      {Key? key,
+      {super.key,
       required this.text,
       required this.onPressed,
-      required this.isDark})
-      : super(key: key);
+      required this.isDark});
 
   @override
   _HoverButtonState createState() => _HoverButtonState();

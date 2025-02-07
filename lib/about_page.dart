@@ -114,9 +114,9 @@ class AboutPage extends StatelessWidget {
     return ElevatedButton.icon(
       onPressed: () async {
         final uri = Uri.parse(
-            "https://drive.google.com/file/d/1tHNx0cioW2YzW4HwM8yXej5LnFADcbk1/view?usp=sharing");
+            "https://drive.google.com/file/d/1HvNltEPrG7WeBLbM_wGqpwdrrMbxk-OG/view?usp=sharing");
         if (await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-          throw 'Could not launch "https://drive.google.com/file/d/1tHNx0cioW2YzW4HwM8yXej5LnFADcbk1/view?usp=sharing"';
+          throw 'Could not launch "https://drive.google.com/file/d/1HvNltEPrG7WeBLbM_wGqpwdrrMbxk-OG/view?usp=sharing"';
         }
       },
       icon: const Icon(Icons.download, size: 20),

@@ -3,7 +3,7 @@ import 'package:portfolio/home_page.dart';
 import 'package:rive/rive.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
     });
     return Scaffold(
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: 200,
           width: 200,
           child: RiveAnimation.asset(

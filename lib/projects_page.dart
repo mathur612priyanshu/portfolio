@@ -13,7 +13,7 @@ class ProjectsPage extends StatefulWidget {
 }
 
 class _ProjectsPageState extends State<ProjectsPage> {
-  List<bool> _isHovered = List.filled(6, false);
+  final List<bool> _isHovered = List.filled(6, false);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
       "assets/images/meme1.png"
     ];
     List<String> projectIntro = [
-      "A college connect app for students and faculty with authentication, ERP links, notes, results, and face recognition attendance.",
+      "Nexo Vision is a digital platform designed for students and teachers, serving as a technical bridge to enhance communication and connectivity in an academic environment. The application offers features such as face recognition-based attendance, the ability to upload and access notes and previous year question papers, and direct access to essential college resources, including the college website and ERP system. It also incorporates role-based access control, ensuring a tailored experience for students and teachers with different data views.",
       "A wallpaper app allowing users to browse, search, and set wallpapers from a vast collection.",
       "A WhatsApp UI clone built in Flutter showcasing UI development skills.",
       "A news app fetching live news updates via API, displaying categorized news.",
@@ -42,7 +42,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
       "A meme-sharing app displaying trending memes and allowing users to download and share them."
     ];
     List<String> projectTech = [
-      "Flutter, Dart, Firebase(Authentication, CloudStorage), REST API, Artificial Intelligence",
+      "Flutter, Dart, Firebase(Authentication, CloudStorage), Cloudinary, face++ API, Artificial Intelligence",
       "Flutter, Dart, REST API",
       "Flutter, Dart",
       "Flutter, Dart, REST API",
@@ -50,7 +50,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
       "Flutter, Dart"
     ];
     List<String> githubLink = [
-      "https://github.com/PrashantSharma0512/NexoVision/tree/main/Frontend",
+      "https://github.com/mathur612priyanshu/nexo_vision",
       "https://github.com/mathur612priyanshu/walpy_app",
       "https://github.com/mathur612priyanshu/UI-Whatsapp/tree/master",
       "https://github.com/mathur612priyanshu/newsApp",
@@ -66,6 +66,16 @@ class _ProjectsPageState extends State<ProjectsPage> {
         "assets/images/nexo5.png",
         "assets/images/nexo6.png",
         "assets/images/nexo7.png",
+        "assets/images/nexo8.png",
+        "assets/images/nexo9.png",
+        "assets/images/nexo10.png",
+        "assets/images/nexo11.png",
+        "assets/images/nexo12.png",
+        "assets/images/nexo13.png",
+        "assets/images/nexo14.png",
+        "assets/images/nexo15.png",
+        "assets/images/nexo16.png",
+        "assets/images/nexo17.png",
       ],
       [
         "assets/images/walpy1.png",
@@ -94,8 +104,10 @@ class _ProjectsPageState extends State<ProjectsPage> {
     final isDarkMode = context.watch<ProviderData>().isDark();
     var size = MediaQuery.of(context).size;
     bool isDark = context.watch<ProviderData>().isDark();
+    bool isViewAll = context.watch<ProviderData>().isViewAll();
 
     return Scaffold(
+      // appBar: isViewAll ? AppBar() : null,
       backgroundColor: isDark ? Colors.black : Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
@@ -128,7 +140,9 @@ class _ProjectsPageState extends State<ProjectsPage> {
                       childAspectRatio: 1.5,
                     ),
                     itemCount: projectName.length,
-                    // physics: NeverScrollableScrollPhysics(),
+                    physics: isViewAll
+                        ? BouncingScrollPhysics()
+                        : NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return MouseRegion(
@@ -257,6 +271,20 @@ class _ProjectsPageState extends State<ProjectsPage> {
           ),
         ),
       ),
+      floatingActionButton: isViewAll
+          ? FloatingActionButton(
+              backgroundColor: isDarkMode
+                  ? Colors.white
+                  : const Color.fromARGB(255, 89, 205, 255),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back,
+                size: 40,
+                color: !isDarkMode ? Colors.white : Colors.lightBlueAccent,
+              ))
+          : null,
     );
   }
 }

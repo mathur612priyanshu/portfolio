@@ -68,6 +68,7 @@ class SkillsPage extends StatelessWidget {
                   childAspectRatio: 2.5, // Adjust row height
                 ),
                 itemCount: skills.length,
+                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Container(

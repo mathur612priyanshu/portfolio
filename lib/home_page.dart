@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     final isDarkMode = context.watch<ProviderData>().isDark();
     bool isMobile = size.width < 500 ? true : false;
-
+    // bool isViewAll = context.watch<ProviderData>().isViewAll();
     return Scaffold(
       // appBar: customAppBar(context, _scaffoldKey, isDarkMode, scrollToSection),
       backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -47,48 +47,58 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         SizedBox(
-                          child: IntroPage(),
                           height: size.height - 70,
                           width: size.width / 2,
+                          child: IntroPage(),
                         ),
                         SizedBox(
-                          child: BirbAnimation(),
                           height: size.height - 70,
                           width: size.width / 2,
+                          child: BirbAnimation(),
                         )
                       ],
                     )
                   : Column(
                       children: [
                         SizedBox(
-                          child: BirbAnimation(),
                           height: (size.height / 2),
                           width: size.width,
+                          child: BirbAnimation(),
                         ),
                         SizedBox(
-                          child: IntroPage(),
                           height: (size.height / 2) - 70,
                           width: size.width,
+                          child: IntroPage(),
                         ),
                       ],
                     ),
             ),
             SizedBox(
-              key: Key("about"), // 🔹 Add Key for scrolling
-              child: AboutPage(),
+              key: Key("about"),
               height:
                   size.width > size.height ? size.height / 1.5 : size.height,
-              width: size.width,
+              width: size.width, // 🔹 Add Key for scrolling
+              child: AboutPage(),
             ),
             SizedBox(height: 30),
             SizedBox(
                 key: Key("projects"),
-                child: ProjectsPage(),
-                height: isMobile ? size.height * 2 : size.height),
+                height: isMobile ? size.height * 2 : size.height,
+                child: ProjectsPage()),
+            TextButton(
+                onPressed: () async {
+                  context.read<ProviderData>().changeProjectView();
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProjectsPage()),
+                  );
+                  context.read<ProviderData>().changeProjectView();
+                },
+                child: Text("View all projects...")),
             SizedBox(
               key: Key("skills"),
-              child: SkillsPage(),
               height: size.height,
+              child: SkillsPage(),
             ),
             SizedBox(
               key: Key("contact"),
