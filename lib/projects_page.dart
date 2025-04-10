@@ -20,41 +20,41 @@ class _ProjectsPageState extends State<ProjectsPage> {
     List<String> projectName = [
       "Nexo Vision",
       "Wallpaper App",
+      "ToDo App",
       "WhatsApp UI",
       "News App",
-      "Calculator App",
       "Meme App"
     ];
     List<String> projectImage = [
       "assets/images/nexo3.png",
       "assets/images/walpy1.png",
+      "assets/images/todo3.png",
       "assets/images/whatsapp1.png",
       "assets/images/news2.png",
-      "assets/images/calci.png",
       "assets/images/meme1.png"
     ];
     List<String> projectIntro = [
       "Nexo Vision is a digital platform designed for students and teachers, serving as a technical bridge to enhance communication and connectivity in an academic environment. The application offers features such as face recognition-based attendance, the ability to upload and access notes and previous year question papers, and direct access to essential college resources, including the college website and ERP system. It also incorporates role-based access control, ensuring a tailored experience for students and teachers with different data views.",
       "A wallpaper app allowing users to browse, search, and set wallpapers from a vast collection.",
+      "A simple todo app for managing your daily tasks with options of adding, updating and deleting task in offline mode.",
       "A WhatsApp UI clone built in Flutter showcasing UI development skills.",
       "A news app fetching live news updates via API, displaying categorized news.",
-      "A simple calculator app with basic arithmetic operations and a clean UI.",
       "A meme-sharing app displaying trending memes and allowing users to download and share them."
     ];
     List<String> projectTech = [
       "Flutter, Dart, Firebase(Authentication, CloudStorage), Cloudinary, face++ API, Artificial Intelligence",
       "Flutter, Dart, REST API",
+      "Flutter, Dart, Provider State management, MVC Architecture",
       "Flutter, Dart",
       "Flutter, Dart, REST API",
-      "Flutter, Dart",
       "Flutter, Dart"
     ];
     List<String> githubLink = [
       "https://github.com/mathur612priyanshu/nexo_vision",
       "https://github.com/mathur612priyanshu/walpy_app",
+      "https://github.com/mathur612priyanshu/todo_app",
       "https://github.com/mathur612priyanshu/UI-Whatsapp/tree/master",
       "https://github.com/mathur612priyanshu/newsApp",
-      "https://github.com/mathur612priyanshu/calculator",
       "https://github.com/mathur612priyanshu/meme_app"
     ];
     List<List<String>> projectImageList = [
@@ -85,6 +85,13 @@ class _ProjectsPageState extends State<ProjectsPage> {
         "assets/images/walpy5.png",
       ],
       [
+        "assets/images/todo1.png",
+        "assets/images/todo2.png",
+        "assets/images/todo3.png",
+        "assets/images/todo4.png",
+        "assets/images/todo5.png",
+      ],
+      [
         "assets/images/whatsapp1.png",
         "assets/images/whatsapp2.png",
         "assets/images/whatsapp3.png",
@@ -95,9 +102,6 @@ class _ProjectsPageState extends State<ProjectsPage> {
         "assets/images/news1.png",
         "assets/images/news2.png",
         "assets/images/news3.png",
-      ],
-      [
-        "assets/images/calci.png",
       ],
       ["assets/images/meme1.png", "assets/images/meme2.png"]
     ];
@@ -193,7 +197,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
                                   ),
                                   Expanded(child: SizedBox(height: 8)),
                                   AutoSizeText(
-                                    "Aspiring and dedicated B.Tech Computer Science student with a strong foundation in software development and a passion for creating innovative applications.",
+                                    projectIntro[index],
                                     maxLines: 2,
                                     style: const TextStyle(
                                         fontSize: 14, color: Colors.grey),
